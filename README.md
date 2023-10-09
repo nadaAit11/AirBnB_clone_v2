@@ -1,7 +1,5 @@
 # AirBnB clone - The console
 
-![HBNB logo](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231009%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231009T160557Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=9ed0ab90496a9492eb9da43dc8a1c02c213713860e79b1d44043bdd2b4b917fb)
-
 ## Desciption 
 AirBnB clone is a featuring database storage, a back-end API, and front-end interfacing in a clone of AirBnB. The project currently implements the back-end console.
 
@@ -79,5 +77,5 @@ Unittests for the HolbertonBnB project are defined in the tests folder. To run t
 $ python3 -m unittest discover tests
 ```
 ## Authors ✒️
-- NAZIH TOUIH (<NEAZYIT>)
+- NAZIH TOUIH (NEAZYIT)
 - diri smitk HHHHHHHHHHH
