@@ -5,7 +5,7 @@ AirBnB clone is a featuring database storage, a back-end API, and front-end inte
 
 
 ## Classes 🆑
-HolbertonBnB utilizes the following classes:
+HBnB utilizes the following classes:
 - BaseModel
 - FileStorage
 - User
@@ -87,7 +87,7 @@ EOF  help  quit
 (hbnb) quit
 $
 ```
-But also in non-interactive mode: (like the Shell project in C):
+But also in non-interactive mode:
 ```bash
 $ echo "help" | ./console.py
 (hbnb)
