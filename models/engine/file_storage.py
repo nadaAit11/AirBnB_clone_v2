@@ -61,3 +61,15 @@ class FileStorage:
                         self.__objetcs[key] = class_obj
         except FileNotFoundError:
             pass
+
+    def all_classes(self):
+        """
+        Returns a dictionary of class names and their associated objects.
+        """
+        class_dict = {}
+        for key, obj in self.__objects.items():
+            class_name = key.split('.')[0]
+            if class_name not in class_dict:
+                class_dict[class_name] = {}
+            class_dict[class_name][key] = obj
+        return class_dict
