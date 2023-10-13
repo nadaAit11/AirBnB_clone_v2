@@ -1,0 +1,63 @@
+#!/usr/bin/pyhton3
+"""
+Handles the storage and retrieval of objects to/from a JSON file.
+"""
+import json
+
+
+class FileStorage:
+    """
+    This class manages the storage and retrieval of objects tofrom a JSON FILE
+
+    Attributes:
+        --file_path (str): Path to the JSON file where objects are stored
+        --objects (dict): A dictionary to store objects in memory.
+    """
+
+    __file_path = "file.json"
+    __objects = {}
+
+    def all(self):
+        """
+        Returns a dictionary containing all stored objects.
+
+        Returns:
+            dict: A dictionary of objects, wheere keys are in the format
+            '<class name>.<object id>'.
+        """
+        return self.__objects
+
+    def new(self, obj):
+        """
+        add a new object to the internal dictionary
+
+        Args:
+            obj (BaseModel): The object to be added.
+        """
+        key = f"{obj.__class__.__name__}.{obj.id}"
+        self.__objects[key] = obj
+
+    def save(self):
+        """
+        Serialize objetcs to JSON file
+        """
+        obj_dict = {}
+        for key, obj in self.__objects.items():
+            obj_dict[key] = obj.to_dict()
+        with open(self.__file_path, 'w', encoding='utf-8') as file:
+            json.dump(obj_dict, file)
+
+    def reload(self):
+        """
+        Deserialize objects from JSON file, if the file exits.
+        """
+        try:
+            with open(self.__file_path, 'r', encoding='utf-8') as file:
+                obj_dict = json.load(file)
+                for key, obj_data in obj_dict.items():
+                    class_name, obj_id = key.split('.')
+                    if class_name in globals():
+                        class_obj = globals()[class_name](**obj_data)
+                        self.__objetcs[key] = class_obj
+        except FileNotFoundError:
+            pass
