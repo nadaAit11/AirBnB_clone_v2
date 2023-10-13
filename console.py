@@ -7,6 +7,7 @@ import shlex
 from models import storage
 from models.base_model import BaseModel
 
+
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
@@ -30,12 +31,13 @@ class HBNBCommand(cmd.Cmd):
         Creates a new instance of BaseModel, saves it, and prints the id.
         Usage: create <class name>
         """
+
         args = shlex.split(line)
         if not args:
             print("** class name missing **")
         else:
             class_name = args[0]
-            if class_name in [cls._name_ for cls in BaseModel._subclasses_()]:
+            if class_name == "BaseModel":
                 new_obj = BaseModel()
                 new_obj.save()
                 print(new_obj.id)
@@ -86,14 +88,15 @@ class HBNBCommand(cmd.Cmd):
         Prints all string representations of all instances.
         Usage: all [class name]
         """
+
         args = shlex.split(line)
         obj_list = []
 
         if not args:
-            for key, obj in storage.all().items():
+            for obj in storage.all().values():
                 obj_list.append(str(obj))
         elif args[0] in storage.all_classes():
-            for key, obj in storage.all_classes()[args[0]].values():
+            for key, obj in storage.all_classes()[args[0]].items():
                 obj_list.append(str(obj))
         else:
             print("** class doesn't exist **")
@@ -131,6 +134,7 @@ class HBNBCommand(cmd.Cmd):
                 obj.save()
             else:
                 print("** attribute doesn't exist **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
