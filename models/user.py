@@ -17,5 +17,5 @@ class User(BaseModel):
     # Initialize empty strings for user information
     email = ""
     password = ""
-    fisrt_name = ""
+    first_name = ""
     last_name = ""
