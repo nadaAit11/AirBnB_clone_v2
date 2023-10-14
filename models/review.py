@@ -10,3 +10,7 @@ class Review(BaseModel):
         user_id (str) : the user id
         text (str) ! the text of the review
     """
+
+    place_id = ""
+    user_id = ""
+    text = ""
