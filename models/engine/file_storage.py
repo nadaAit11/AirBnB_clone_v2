@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """
 Handles the storage and retrieval of objects to/from a JSON file.
 """
@@ -43,7 +43,7 @@ class FileStorage:
         """
         obj_dict = {}
         for key, obj in self.__objects.items():
-            obj_dict[key] = obj.to_dict()
+            obj_dict[key] = obj.to_dict() if hasattr(obj, 'to_dict') else obj
         with open(self.__file_path, 'w', encoding='utf-8') as file:
             json.dump(obj_dict, file)
 
@@ -55,10 +55,13 @@ class FileStorage:
             with open(self.__file_path, 'r', encoding='utf-8') as file:
                 obj_dict = json.load(file)
                 for key, obj_data in obj_dict.items():
-                    class_name, obj_id = key.split('.')
-                    if class_name in globals():
-                        class_obj = globals()[class_name](**obj_data)
-                        self.__objetcs[key] = class_obj
+                    if '.' in key:  # Check if the key contains a period
+                        class_name, obj_id = key.split('.')
+                        if class_name in globals():
+                            if hasattr(globals()[class_name], 'register'):
+                                class_obj = globals()[class_name](**obj_data)
+                                class_obj.register()
+                                self.__objects[key] = class_obj
         except FileNotFoundError:
             pass
 
@@ -72,4 +75,15 @@ class FileStorage:
             if class_name not in class_dict:
                 class_dict[class_name] = {}
             class_dict[class_name][key] = obj
-        return class_dict
+        return class_dict
+
+    def register(self, class_obj):
+        """
+        Registers a class with the FileStorage object.
+
+        Args:
+            class_obj (class): The class to be registered
+        """
+        class_name = class_obj.__name__
+        if class_name not in self.__objects:
+            self.__objects[class_name] = {}

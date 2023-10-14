@@ -1,10 +1,11 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """
 A base class for other classes with common attributes and  methods
 """
 import uuid
 from datetime import datetime
 from models.engine.file_storage import FileStorage
+from .engine import file_storage
 
 
 class BaseModel:
@@ -28,10 +29,13 @@ class BaseModel:
                     # Convert strings to datetime objects
                     setattr(self, key, datetime.strptime(value,
                             '%Y-%m-%dT%H:%M:%S.%f'))
+                elif key == 'first_name':
+                    setattr(self, key, value)
         else:  # Otherwise, create a new instance
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
+            self.first_name = ""
 
     def __str__(self):
         """
@@ -48,6 +52,7 @@ class BaseModel:
         and saves the object to the storage
         """
         self.updated_at = datetime.now()
+        FileStorage().register(BaseModel)
         FileStorage().new(self)
         FileStorage().save()
 
@@ -64,3 +69,8 @@ class BaseModel:
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()
         return obj_dict
+
+    def register(self):
+        """Register the BaseModel class with the storage system."""
+        from models import storage
+        storage.register(BaseModel)
