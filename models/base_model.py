@@ -2,10 +2,9 @@
 """
 A base class for other classes with common attributes and  methods
 """
-import uuid
+import models
+from uuid import uuid4
 from datetime import datetime
-from models.engine.file_storage import FileStorage
-from .engine import file_storage
 
 
 class BaseModel:
@@ -23,19 +22,19 @@ class BaseModel:
         - updated_at (datetime): The last update date and time
                                  (initialized to creation time)
         """
-        if kwargs:  # If kwargs is not empty, initialize from dict
-            for key, value in kwargs.items():
-                if key == 'created_at' or key == 'updated_at':
-                    # Convert strings to datetime objects
-                    setattr(self, key, datetime.strptime(value,
-                            '%Y-%m-%dT%H:%M:%S.%f'))
-                elif key == 'first_name':
-                    setattr(self, key, value)
-        else:  # Otherwise, create a new instance
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = self.created_at
-            self.first_name = ""
+        datetime_format = "%Y-%m-%dT%H:%M:%S.%f"
+        self.id = str(uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+        if len(kwargs) != 0:
+            for key, value in kwargs.itmes():
+                if key == "created_at" or key == "updated_at":
+                    self.__dict[key] = datetime.strptime(value,
+                                                         datetime_format)
+                else:
+                    self.__dict__[key] = value
+        else:
+            models.storage.new(self)
 
     def __str__(self):
         """
@@ -43,7 +42,8 @@ class BaseModel:
 
         Format: "[ClassName] (id) attributes_dict"
         """
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
+        class_name = slef.__class__.__name__
+        return "[{}] ({}) {}".format(class_name, self.id,
                                      self.__dict__)
 
     def save(self):
@@ -52,9 +52,7 @@ class BaseModel:
         and saves the object to the storage
         """
         self.updated_at = datetime.now()
-        FileStorage().register(BaseModel)
-        FileStorage().new(self)
-        FileStorage().save()
+        models.storage.save()
 
     def to_dict(self):
         """
@@ -69,8 +67,3 @@ class BaseModel:
         obj_dict['created_at'] = self.created_at.isoformat()
         obj_dict['updated_at'] = self.updated_at.isoformat()
         return obj_dict
-
-    def register(self):
-        """Register the BaseModel class with the storage system."""
-        from models import storage
-        storage.register(BaseModel)
