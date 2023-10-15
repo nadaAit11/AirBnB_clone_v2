@@ -25,12 +25,30 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        """Set in __objects obj with key <obj_class_name>.id"""
+        """
+        Add a new object to the object storage.
+
+        This method adds the given object to the object storage dictionary.
+
+        Args:
+           obj: The object to be added to the storage
+
+        Returns:
+           None
+        """
         ocname = obj.__class__.__name__
         FileStorage.__objects["{}.{}".format(ocname, obj.id)] = obj
 
     def save(self):
-        """Serialize __objects to the JSON file __file_path."""
+        """
+        Serialize the  object storage to a JSON file.
+
+        This method serializes the '__objects' dictionary, containing objects,
+        the the JSON file specified by '__file_path'.
+
+        Returns:
+            None
+        """
         odict = FileStorage.__objects
         objdict = {obj: odict[obj].to_dict() for obj in odict.keys()}
         with open(FileStorage.__file_path, "w") as f:
