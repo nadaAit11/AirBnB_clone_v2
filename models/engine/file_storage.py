@@ -26,7 +26,7 @@ class FileStorage:
 
     def new(self, obj):
         """
-        Add a new object to the object storage.
+        Add the given object to the object storage.
 
         This method adds the given object to the object storage dictionary.
 
