@@ -5,10 +5,10 @@ from models.base_model import BaseModel
 
 class State(BaseModel):
     """
-    Represents a state.
+    Represents a state in the system.
 
     Attributes:
-        name (str): The name of the state.
+        name (str): The official name of the state.
     """
 
     name = ""
