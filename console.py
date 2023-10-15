@@ -35,14 +35,15 @@ def parse(arg):
             return [i.strip(",") for i in split(arg)]
         else:
             lexer = split(arg[:brackets.span()[0]])
-            retl = [i.strip(",") for i in lexer]
-            retl.append(brackets.group())
-            return retl
+            token_list = [i.strip(",") for i in lexer]
+            token_list.append(brackets.group())
+            return token_list
     else:
         lexer = split(arg[:curly_braces.span()[0]])
-        retl = [i.strip(",") for i in lexer]
-        retl.append(curly_braces.group())
-        return retl
+        # Create a list to store parsed tokens
+        token_list = [i.strip(",") for i in lexer]
+        token_list.append(curly_braces.group())
+        return token_list
 
 
 class HBNBCommand(cmd.Cmd):
