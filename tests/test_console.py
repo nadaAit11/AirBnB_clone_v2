@@ -22,7 +22,13 @@ from unittest.mock import patch
 
 
 class TestHBNBCommand_prompting(unittest.TestCase):
-    """Unittests for testing prompting of the HBNB command interpreter."""
+    """
+    Unit tests for evaluating the  functionality of the HBNB command
+    interpreter's prompting.
+
+    These tests focus on the behavior of the HBNB comand interpreter when
+    prompting for user input
+    """
 
     def test_prompt_string(self):
         self.assertEqual("(hbnb) ", HBNBCommand.prompt)
@@ -34,7 +40,13 @@ class TestHBNBCommand_prompting(unittest.TestCase):
 
 
 class TestHBNBCommand_help(unittest.TestCase):
-    """Unittests for testing help messages of the HBNB command interpreter."""
+    """
+    Unit tests for evaluating the help messages provided by the HBNB command
+    interpreter.
+
+    These tests focus on ensuring that the help messages for various commands
+    are correctly displayed.
+    """
 
     def test_help_quit(self):
         h = "Quit command to exit the program."
