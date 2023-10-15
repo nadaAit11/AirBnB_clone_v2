@@ -14,7 +14,7 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """
-        Initializes a new instance of the BaseModel class.
+        Initializes a new instance of the BaseModel object.
 
         Attributes:
         - id (str): A unique identifier generated using uuid4.
