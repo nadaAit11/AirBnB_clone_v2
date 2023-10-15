@@ -66,7 +66,15 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def emptyline(self):
-        """Do nothing upon receiving an empty line."""
+        """Handle an empty line input gracefully.
+
+        This function is called when  the user presses enter whithout
+        providinga  command. It does nothin and actes as a way to prevent
+        unintended command execution when an empty line is entered.
+
+        Returns:
+            None
+        """
         pass
 
     def default(self, arg):
