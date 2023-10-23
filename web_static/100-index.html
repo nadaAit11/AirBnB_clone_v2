@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <title>AirBnB Clone</title>
-    <link rel="stylesheet" href="styles/4-common.css" />
-    <link rel="stylesheet" href="styles/100-places.css" />
-    <link rel="stylesheet" href="styles/6-filters.css" />
-    <link rel="stylesheet" href="styles/3-header.css" />
-    <link rel="stylesheet" href="styles/3-footer.css" />
-    <link rel="icon" type="image/png" href="../images/icon.png" />
+    <link rel="stylesheet" href="styles/4-common.css">
+    <link rel="stylesheet" href="styles/3-header.css">
+    <link rel="stylesheet" href="styles/3-footer.css">
+    <link rel="stylesheet" href="styles/6-filters.css">
+    <link rel="stylesheet" href="styles/100-places.css">
+    <link rel="icon" type="image/png" href="images/icon.png">
 </head>
 <body>
     <header>
@@ -20,17 +20,19 @@
                 <h3>State</h3>
                 <h4>California, Arizona...</h4>
                 <ul class="popover">
-                    <li><h2>Arizona:</h2>
-                    <ul>
-                        <li>Local 1</li>
-                        <li>Local 2</li>
-                    </ul>
+                    <li>
+                        <h2>Arizona:</h2>
+                        <ul>
+                            <li>Local 1</li>
+                            <li>Local 2</li>
+                        </ul>
                     </li>
-                    <li><h2>California:</h2>
-                    <ul>
-                        <li>San Francisco</li>
-                        <li>Los Altos</li>
-                    </ul>
+                    <li>
+                        <h2>California:</h2>
+                        <ul>
+                            <li>San Francisco</li>
+                            <li>Los Altos</li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -38,9 +40,18 @@
                 <h3>Amenities</h3>
                 <h4>Internet, Kitchen...</h4>
                 <ul class="popover">
-                    <li><span class="icon">TV</span><p>TV</p></li>
-                    <li><span class="icon">WiFi</span><p>WiFi</p></li>
-                    <li><span class="icon">Pet</span><p>Pets friendly</p></li>
+                    <li>
+                        <span class="icon">TV</span>
+                        <p>TV</p>
+                    </li>
+                    <li>
+                        <span class="icon">WiFi</span>
+                        <p>WiFi</p>
+                    </li>
+                    <li>
+                        <span class="icon">Pet</span>
+                        <p>Pets friendly</p>
+                    </li>
                 </ul>
             </div>
             <button>Search</button>
@@ -74,13 +85,22 @@
                     <div class="amenities">
                         <h2>Amenities</h2>
                         <ul>
-                            <li><span class="icon">TV</span><p>TV</p></li>
-                            <li><span class="icon">WiFi</span><p>WiFi</p></li>
-                            <li><span class="icon">Pet</span><p>Pets friendly</p></li>
+                            <li>
+                                <div class="icon pet"></div>
+                                <p>Pet Friendly</p>
+                            </li>
+                            <li>
+                                <div class="icon tv"></div>
+                                <p>TV</p>
+                            </li>
+                            <li>
+                                <div class="icon wifi"></div>
+                                <p>WiFi</p>
+                            </li>
                         </ul>
                     </div>
                     <div class="reviews">
-                        <h2>2 Reviews</h2>
+                        <h2>Reviews</h2>
                         <ul>
                             <li>
                                 <h3>From Bob Dylan the 27th January 2017</h3>
@@ -119,11 +139,14 @@
                     <div class="amenities">
                         <h2>Amenities</h2>
                         <ul>
-                            <li><span class="icon">Pet</span><p>Pets friendly</p></li>
+                            <li>
+                                <div class="icon pet"></div>
+                                <p>Pet Friendly</p>
+                            </li>
                         </ul>
                     </div>
                     <div class="reviews">
-                        <h2>1 Review</h2>
+                        <h2>Reviews</h2>
                         <ul>
                             <li>
                                 <h3>From Jaiber the 4th July 2018</h3>
@@ -133,16 +156,16 @@
                     </div>
                 </article>
                 <article>
-                    <h2>A suite</h2>
-                    <div class="price_by_night">$10</div>
+                    <h2>A Suite by the Sea</h2>
+                    <div class="price_by_night">$120</div>
                     <div class="information">
                         <div class="max_guest">
                             <div class="max_guest_img"></div>
-                            <p>3 Guests</p>
+                            <p>4 Guests</p>
                         </div>
                         <div class="number_rooms">
                             <div class="number_rooms_img"></div>
-                            <p>3 Bedrooms</p>
+                            <p>2 Bedrooms</p>
                         </div>
                         <div class="number_bathrooms">
                             <div class="number_bathrooms_img"></div>
@@ -150,31 +173,41 @@
                         </div>
                     </div>
                     <div class="user">
-                        <p><b>Owner:</b> MADD</p>
+                        <p><b>Owner:</b> Beachy Rentals</p>
                     </div>
                     <div class="description">
-                        <p>The house is an ancient structure in local stone with the typical high vaulted ceilings, newly renovated using natural materials and free of toxic substances in the respect of the tradition. Cozy and comfortable, it is composed of two rooms, a living room with a sofa bed, dining room, a large loft for a sleeping area, kitchen, bathroom with shower, and a small outdoor space with another shower (very useful when you return from the sea).</p>
+                        <p>Escape to a beautiful beachfront suite by the sea. This spacious and cozy suite offers stunning ocean views and direct access to the beach. Enjoy a relaxing stay with your family or friends. The suite features a well-equipped kitchen, a comfortable living area, and a private balcony where you can watch breathtaking sunsets.</p>
                     </div>
                     <div class="amenities">
                         <h2>Amenities</h2>
                         <ul>
-                            <li><span class="icon">TV</span><p>TV</p></li>
-                            <li><span class="icon">WiFi</span><p>WiFi</p></li>
+                            <li>
+                                <div class="icon tv"></div>
+                                <p>TV</p>
+                            </li>
+                            <li>
+                                <div class="icon wifi"></div>
+                                <p>WiFi</p>
+                            </li>
+                            <li>
+                                <div class="icon pet"></div>
+                                <p>Pet Friendly</p>
+                            </li>
                         </ul>
                     </div>
                     <div class="reviews">
-                        <h2>2 Reviews</h2>
+                        <h2>Reviews</h2>
                         <ul>
                             <li>
-                                <h3>From Summer Explorer on July 20th, 2019</h3>
-                                <p>We had a fantastic summer vacation at the suite. The traditional design of the house and the beautiful location made our stay memorable. The host was very helpful and made our summer experience truly enjoyable. We highly recommend this place for a summer getaway!</p>
+                                <h3>From Sarah on June 15th, 2022</h3>
+                                <p>An incredible place with a stunning view. The suite was clean and well-maintained. We had a fantastic time and would love to come back!</p>
                             </li>
                             <li>
-                                <h3>From Travel Enthusiasts on January 4th, 2017</h3>
-                                <p>We had a wonderful time at the suite. The accommodations and location were perfect for our summer trip. We highly recommend it for a great summer escape.</p>
+                                <h3>From Mark on May 3rd, 2022</h3>
+                                <p>Perfect getaway by the sea. The owner was very accommodating, and the amenities were great. Highly recommended!</p>
                             </li>
                         </ul>
-                    </div>                    
+                    </div>
                 </article>
             </div>
         </section>
