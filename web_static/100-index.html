@@ -1,219 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>AirBnB Clone</title>
     <link rel="stylesheet" href="styles/4-common.css">
+    <link rel="stylesheet" href="styles/100-places.css">
+    <link rel="stylesheet" href="styles/6-filters.css">
     <link rel="stylesheet" href="styles/3-header.css">
     <link rel="stylesheet" href="styles/3-footer.css">
-    <link rel="stylesheet" href="styles/6-filters.css">
-    <link rel="stylesheet" href="styles/100-places.css">
-    <link rel="icon" type="image/png" href="images/icon.png">
-</head>
-<body>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+  </head>
+  <body>
     <header>
         <div class="icon"></div>
     </header>
     <div class="container">
-        <section class="filters">
-            <div class="locations">
-                <h3>State</h3>
-                <h4>California, Arizona...</h4>
-                <ul class="popover">
-                    <li>
-                        <h2>Arizona:</h2>
-                        <ul>
-                            <li>Local 1</li>
-                            <li>Local 2</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h2>California:</h2>
-                        <ul>
-                            <li>San Francisco</li>
-                            <li>Los Altos</li>
-                        </ul>
-                    </li>
+      <section class="filters">
+        <div class="locations">
+          <h3>State</h3>
+          <h4>California, Arizona...</h4>
+          <ul class="popover">
+            <li><h2>Arizona:</h2>
+            <ul>
+              <li>local</li>
+              <li>local 2</li>
+            </ul>
+          </li>
+            <li><h2>California:</h2>
+            <ul>
+              <li>San Francisco</li>
+              <li>Los Altos</li>
+            </ul>
+          </li>
+          </ul>
+        </div><!--
+        --><div class="amenities">
+          <h3>Anemities</h3>
+          <h4>Internet, Kitchet...</h4>
+          <ul class="popover">
+            <li>Internet</li>
+            <li>TV</li>
+            <li>Kitchen</li>
+            <li>Iron</li>
+          </ul>
+        </div>
+        <button>Search</button>
+      </section>
+      <section class="places">
+        <h1>Places</h1>
+        <div class="wrap">
+          <article>
+            <h2>My home</h2>
+            <div class="price_by_night">$80</div>
+            <div class="information">
+              <div class="max_guest">
+                  <div class="max_guest_img"></div>
+                <p>2 Guest</p>
+              </div>
+              <div class="number_rooms">
+                <div class="number_rooms_img"></div>
+                <p>1 Bedroom</p>
+              </div>
+              <div class="number_bathrooms">
+                  <div class="number_bathrooms_img"></div>
+                <p>1 Bathroom</p>
+              </div>
+            </div>
+              <div class="user">
+                <p><b>Owner:</b> messi.</p>
+              </div>
+              <div class="description">
+                <p>Easily accessible for those arriving by car from Brindisi and 10 min walk from the shuttle bus that connects to the airport.
+                  Great for those who want to visit and know the city and as a starting point for exploring the magnificent beaches of the Salento coast or the hinterland rich in colors and ancient traditions.</p>
+              </div>
+              <div class="amenities">
+                <h2>Amenities</h2>
+                <ul>
+                  <li class="a1"><p>TV</p></li>
+                  <li class="a2"><p>WiFi</p></li>
+                    <li class="a3"><p>Pets friendly</p></li>
                 </ul>
-            </div>
-            <div class="amenities">
-                <h3>Amenities</h3>
-                <h4>Internet, Kitchen...</h4>
-                <ul class="popover">
-                    <li>
-                        <span class="icon">TV</span>
-                        <p>TV</p>
-                    </li>
-                    <li>
-                        <span class="icon">WiFi</span>
-                        <p>WiFi</p>
-                    </li>
-                    <li>
-                        <span class="icon">Pet</span>
-                        <p>Pets friendly</p>
-                    </li>
+              </div>
+              <div class="reviews">
+                <h2>2 Reviews</h2>
+                <ul>
+                  <li>
+                    <h3>From Bob Dylan the 27th January 2017</h3>
+                      <p>Runshi is an epic host. Nothing more I can say. 5 star!</p>
+                  </li>
+                  <li>
+                    <h3>From Connor the 4th January 2017</h3>
+                    <p>Highly recommended</p>
+                  </li>
                 </ul>
-            </div>
-            <button>Search</button>
-        </section>
-        <section class="places">
-            <h1>Places</h1>
-            <div class="wrap">
-                <article>
-                    <h2>My home</h2>
-                    <div class="price_by_night">$80</div>
-                    <div class="information">
-                        <div class="max_guest">
-                            <div class="max_guest_img"></div>
-                            <p>2 Guests</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="number_rooms_img"></div>
-                            <p>1 Bedroom</p>
-                        </div>
-                        <div class="number_bathrooms">
-                            <div class="number_bathrooms_img"></div>
-                            <p>1 Bathroom</p>
-                        </div>
-                    </div>
-                    <div class="user">
-                        <p><b>Owner:</b> MESSI.</p>
-                    </div>
-                    <div class="description">
-                        <p>Easily accessible for those arriving by car from Brindisi and 10 min walk from the shuttle bus that connects to the airport. Great for those who want to visit and know the city and as a starting point for exploring the magnificent beaches of the Salento coast or the hinterland rich in colors and ancient traditions.</p>
-                    </div>
-                    <div class="amenities">
-                        <h2>Amenities</h2>
-                        <ul>
-                            <li>
-                                <div class="icon pet"></div>
-                                <p>Pet Friendly</p>
-                            </li>
-                            <li>
-                                <div class="icon tv"></div>
-                                <p>TV</p>
-                            </li>
-                            <li>
-                                <div class="icon wifi"></div>
-                                <p>WiFi</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="reviews">
-                        <h2>Reviews</h2>
-                        <ul>
-                            <li>
-                                <h3>From Bob Dylan the 27th January 2017</h3>
-                                <p>Runshi is an epic host. Nothing more I can say. 5 stars!</p>
-                            </li>
-                            <li>
-                                <h3>From Connor the 4th January 2017</h3>
-                                <p>Highly recommended</p>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article>
-                    <h2>Tiny house</h2>
-                    <div class="price_by_night">$65</div>
-                    <div class="information">
-                        <div class="max_guest">
-                            <div class="max_guest_img"></div>
-                            <p>1 Guest</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="number_rooms_img"></div>
-                            <p>1 Bedroom</p>
-                        </div>
-                        <div class="number_bathrooms">
-                            <div class="number_bathrooms_img"></div>
-                            <p>0 Bathrooms</p>
-                        </div>
-                    </div>
-                    <div class="user">
-                        <p><b>Owner:</b> Jojo</p>
-                    </div>
-                    <div class="description">
-                        <p>A tiny apartment in Chapinero - Zona G (G for Gourmet). Chapinero is a vibrant neighborhood filled with bohemian cafes, bars, and restaurants. Nearby you will find Amor perfecto (one of the best coffee shops in Colombia), Ice Cream (Orso), Artisanal beers (BBC), and bread (Arbol de pan). If you are health-conscious, vegetarian, make sure you visit Crepes & Waffles Artesano. If you are just in the mood for brunch, walk into Eric Kayzer, Bagatelle, or my favorite: MASA.</p>
-                    </div>
-                    <div class="amenities">
-                        <h2>Amenities</h2>
-                        <ul>
-                            <li>
-                                <div class="icon pet"></div>
-                                <p>Pet Friendly</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="reviews">
-                        <h2>Reviews</h2>
-                        <ul>
-                            <li>
-                                <h3>From Jaiber the 4th July 2018</h3>
-                                <p>Awesome, video games and food!</p>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <article>
-                    <h2>A Suite by the Sea</h2>
-                    <div class="price_by_night">$120</div>
-                    <div class="information">
-                        <div class="max_guest">
-                            <div class="max_guest_img"></div>
-                            <p>4 Guests</p>
-                        </div>
-                        <div class="number_rooms">
-                            <div class="number_rooms_img"></div>
-                            <p>2 Bedrooms</p>
-                        </div>
-                        <div class="number_bathrooms">
-                            <div class="number_bathrooms_img"></div>
-                            <p>2 Bathrooms</p>
-                        </div>
-                    </div>
-                    <div class="user">
-                        <p><b>Owner:</b> Beachy Rentals</p>
-                    </div>
-                    <div class="description">
-                        <p>Escape to a beautiful beachfront suite by the sea. This spacious and cozy suite offers stunning ocean views and direct access to the beach. Enjoy a relaxing stay with your family or friends. The suite features a well-equipped kitchen, a comfortable living area, and a private balcony where you can watch breathtaking sunsets.</p>
-                    </div>
-                    <div class="amenities">
-                        <h2>Amenities</h2>
-                        <ul>
-                            <li>
-                                <div class="icon tv"></div>
-                                <p>TV</p>
-                            </li>
-                            <li>
-                                <div class="icon wifi"></div>
-                                <p>WiFi</p>
-                            </li>
-                            <li>
-                                <div class="icon pet"></div>
-                                <p>Pet Friendly</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="reviews">
-                        <h2>Reviews</h2>
-                        <ul>
-                            <li>
-                                <h3>From Sarah on June 15th, 2022</h3>
-                                <p>An incredible place with a stunning view. The suite was clean and well-maintained. We had a fantastic time and would love to come back!</p>
-                            </li>
-                            <li>
-                                <h3>From Mark on May 3rd, 2022</h3>
-                                <p>Perfect getaway by the sea. The owner was very accommodating, and the amenities were great. Highly recommended!</p>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </section>
+              </div>
+          </article>
+          <article>
+            <h2>Tiny house</h2>
+            <div class="price_by_night">$65</div>
+            <div class="information">
+                <div class="max_guest">
+                    <div class="max_guest_img"></div>
+                  <p>1 Guest</p>
+                </div>
+                <div class="number_rooms">
+                  <div class="number_rooms_img"></div>
+                  <p>1 Bedroom</p>
+                </div>
+                <div class="number_bathrooms">
+                    <div class="number_bathrooms_img"></div>
+                  <p>0 Bathroom</p>
+                </div>
+              </div>
+                <div class="user">
+                  <p><b>Owner:</b> Joji.</p>
+                </div>
+                <div class="description">
+                  <p>A tiny apartment in Chapinero - Zona G (G for Gourmet). Chapinero is a vibrant neighborhood filled with bohemian cafes, bars and restaurants. Nearby You will find Amor perfecto (One of the best coffee shop in Colombia), Ice Cream (Orso), Artisanal beers (BBC) and bread (Arbol de pan). If you are health conscious, vegetarian, make sure you visit Crepes & Waffles Artesano. If you are just in the mood for brunch just walk into Eric Kayzer, Bagatelle or my favorite: MASA.</p>
+                </div>
+                <div class="amenities">
+                    <h2>Amenities</h2>
+                    <ul>
+                        <li class="a3"><p>madd</p></li>
+                    </ul>
+                  </div>
+                  <div class="reviews">
+                    <h2>1 Review</h2>
+                    <ul>
+                      <li>
+                        <h3>From Jaiber the 4 July 2018</h3>
+                          <p>Awesome, videogames and food!</p>
+                      </li>
+                    </ul>
+                  </div>
+          </article>
+          <article>
+            <h2>A suite</h2>
+            <div class="price_by_night">$10</div>
+            <div class="information">
+                <div class="max_guest">
+                    <div class="max_guest_img"></div>
+                  <p>3 Guest</p>
+                </div>
+                <div class="number_rooms">
+                  <div class="number_rooms_img"></div>
+                  <p>3 Bedroom</p>
+                </div>
+                <div class="number_bathrooms">
+                    <div class="number_bathrooms_img"></div>
+                  <p>2 Bathroom</p>
+                </div>
+              </div>
+                <div class="user">
+                  <p><b>Owner:</b> shobee</p>
+                </div>
+                <div class="description">
+                  <p>The house is an ancient structure in local stone with the typical high vaulted ceilings, newly renovated using natural materials and free of toxic substances in the respect of the tradition.
+                      Cozy and comfortable, is composed of two rooms, a living room with sofa bed, dining room, a large loft for sleeping area, kitchen, bathroom with shower and a small outdoor space with another shower (very useful when you return from sea).</p>
+                </div>
+                <div class="amenities">
+                    <h2>Amenities</h2>
+                    <ul>
+                      <li class="a1"><p>TV</p></li>
+                      <li class="a2"><p>WiFi</p></li>
+                    </ul>
+                  </div>
+                  <div class="reviews">
+                    <h2>2 Reviews</h2>
+                    <ul>
+                      <li>
+                        <h3>From Andrew NG the 15th May 2019</h3>
+                          <p>great talk about ML, tech host!</p>
+                      </li>
+                      <li>
+                        <h3>From TAs the 4th January 2017</h3>
+                        <p>Highly recommended</p>
+                      </li>
+                    </ul>
+                  </div>
+          </article>
+        </div>
+      </section>
     </div>
     <footer>
-        <p>Best School</p>
+      <p>Best School</p>
     </footer>
-</body>
+  </body>
 </html>
