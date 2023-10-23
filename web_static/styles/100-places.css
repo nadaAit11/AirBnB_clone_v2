@@ -85,19 +85,19 @@
 }
 .places .amenities .a1 {
   background: url("../images/icon_tv.png") 0 100% no-repeat;
-  background-size: 25px 25px;
+  background-size: 25px 25px; 
   padding-left: 35px;
   height: 25px;
 }
 .places .amenities .a2 {
   background: url("../images/icon_wifi.png") 0 100% no-repeat;
-  background-size: 25px 25px;
+  background-size: 25px 25px; 
   padding-left: 35px;
   height: 25px;
 }
 .places .amenities .a3 {
   background: url("../images/icon_pets.png") 0 100% no-repeat;
-  background-size: 25px 25px;
+  background-size: 25px 25px; 
   padding-left: 35px;
   height: 25px;
 }
