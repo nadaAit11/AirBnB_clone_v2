@@ -1,0 +1,83 @@
+/* Styling for Filter Section */
+.filters {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Styling for Locations and Amenities */
+.locations, .amenities {
+    height: 100%;
+    width: 25%;
+    border-right: 1px solid #DDDDDD;
+    z-index: 2;
+}
+
+/* Styling for Popover (Dropdown) */
+.popover {
+    background-color: #FAFAFA;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.locations:hover .popover, .amenities:hover .popover {
+    display: inline-block;
+}
+
+/* Styling for Heading 2 */
+h2 {
+    font-size: 16px;
+    margin-left: -15px;
+}
+
+/* Styling for Heading 3 */
+h3 {
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 40px;
+}
+
+/* Styling for Heading 4 */
+h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+/* Styling for the Search Button */
+.filters button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 20%;
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    right: 25px;
+}
+
+/* Styling for List Items in Popover */
+.popover li {
+    margin-top: 10px;
+    list-style-type: none;
+    margin-left: -1px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    opacity: 0.9;
+}
