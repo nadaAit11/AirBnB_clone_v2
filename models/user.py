@@ -1,21 +1,35 @@
 #!/usr/bin/python3
-"""Defines the User class."""
-from models.base_model import BaseModel
+"""
+Defines the User class.
+"""
+from sqlalchemy import Column, String
+from models.base_model import BaseModel, Base
 
 
-class User(BaseModel):
+class User(BaseModel, Base):
     """
     Represent a User.
 
     Attributes:
-        email (str): The email of the user.
-        password (str): The password of the user.
-        first_name (str): The user's first name.
-        last_name (str): The user's last name.
+        __tablename__ (str): The name of the MySQL table to store Users.
+        email (Column): The email of the user.
+        password (Column): The password of the user.
+        first_name (Column): The user's first name.
+        last_name (Column): The user's last name.
     """
+    # Represents the table name, users
+    __tablename__ = 'users'
 
-    # Initialize empty strings for user information
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+    # Represents a column containing a string (128 characters)
+    # and can’t be null
+    email = Column(String(128), nullable=False)
+
+    # Represents a column containing a string (128 characters)
+    # and can’t be null
+    password = Column(String(128), nullable=False)
+
+    # Represents a column containing a string (128 characters) and can be null
+    first_name = Column(String(128), nullable=True)
+    
+    # Represents a column containing a string (128 characters) and can be null
+    last_name = Column(String(128), nullable=True)
