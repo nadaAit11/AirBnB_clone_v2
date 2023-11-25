@@ -1,41 +1,28 @@
 #!/usr/bin/python3
-
 """
-City Class Definition
-
-This module defines the city class, which represents a city in the HBNB project
-It inherits from the BaseModel class and provides attributes for state ID
-and City name.
-
-Attributes:
-    state_id (str): The state ID to which the city belongs.
-    name (str): The name of the city
-
-Inherits from:
-    BaseModel
-
-Usage:
-    You  can create a city object as follows:
-
-    city = City()
-
-    You can access its attributes like state_id and name.
+This module defines the City class, which represents a city in the
+HBNB project.
+It inherits from the BaseModel and Base classes and provides attributes
+for city name and state ID.
 """
 
+from sqlalchemy import Column, String, ForeignKey
+from models.base_model import BaseModel, Base
 
-from models.base_model import BaseModel
-
-
-class City(BaseModel):
+class City(BaseModel, Base):
     """
     City Class
 
     Represents a city in the HBNB project.
 
     Attributes:
-        state_id (str): The state ID to which the city belongs.
-        name (str): The name of the city
+        __tablename__ (str): The name of the MySQL table to store Cities.
+        name (Column): The name of the City, represented as a string
+        of up to 128 characters. It cannot be null.
+        state_id (Column): The state id of the City, represented
+        as a string of up to 60 characters. It cannot be null and
+        is a foreign key to states.id.
     """
-
-    state_id = ""
-    name = ""
+    __tablename__ = 'cities'
+    name = Column(String(128), nullable=False)
+    state_id = Column(String(60), ForeignKey('states.id'), nullable=False)
