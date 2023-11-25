@@ -8,6 +8,9 @@ for city name and state ID.
 
 from sqlalchemy import Column, String, ForeignKey
 from models.base_model import BaseModel, Base
+from sqlalchemy.orm import relationship
+from models.place import Place
+
 
 class City(BaseModel, Base):
     """
@@ -23,6 +26,10 @@ class City(BaseModel, Base):
         as a string of up to 60 characters. It cannot be null and
         is a foreign key to states.id.
     """
+    # Represents the table name, cities
     __tablename__ = 'cities'
+
     name = Column(String(128), nullable=False)
     state_id = Column(String(60), ForeignKey('states.id'), nullable=False)
+    # Represents a relationship with the class Place
+    places = relationship("Place", backref="cities", cascade="all, delete")
