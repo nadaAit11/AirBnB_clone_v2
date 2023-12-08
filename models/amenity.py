@@ -1,37 +1,23 @@
 #!/usr/bin/python3
-
-"""
-Amenity Class Definition
-
-This module defines the Amenity class, which represents amenities in the
-Airbnb-like app
-Amenities are additional features or services provided with renatl listings.
-
-Attributes:
-    name (str): The name of the amenity
-
-Inherits from:
-    BaseMoedel: The base class for all other classes in  the project,
-    which provides common attributes abd methods.
-"""
-
-
+"""Defines the Amenity class."""
+from models.base_model import Base
 from models.base_model import BaseModel
+from sqlalchemy import Column
+from sqlalchemy import String
+from sqlalchemy.orm import relationship
 
 
-class Amenity(BaseModel):
-    """
-    Amenity class
+class Amenity(BaseModel, Base):
+    """Represents an Amenity for a MySQL database.
 
-    Represnents an amenity, including its name. Inherits from BaseModel.
+    Inherits from SQLAlchemy Base and links to the MySQL table amenities.
 
     Attributes:
-         name (str): The name of the amenity.
-
-    Examples:
-         you can create an Amemity object as follows:
-         Amenity = Amenity()
-         amenity.name = "Swimming pool"
+        __tablename__ (str): The name of the MySQL table to store Amenities.
+        name (sqlalchemy String): The amenity name.
+        place_amenities (sqlalchemy relationship): Place-Amenity relationship.
     """
-
-    name = ""
+    __tablename__ = "amenities"
+    name = Column(String(128), nullable=False)
+    place_amenities = relationship("Place", secondary="place_amenity",
+                                   viewonly=False)
